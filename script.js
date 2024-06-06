@@ -1,19 +1,33 @@
-let student = prompt('Qual o nome do(a) aluno(a)?')
-let N1 = prompt('Qual a nota da primeira prova?')
-let N2 = prompt('Qual a nota da segunda prova?')
+let listaDeEstudantes = [
+    {
+        nomeDoEstudante: 'Pedro',
+        primeiraNota: 9,
+        segundaNota: 6,
+    },
 
-let Avarage = (Number(N1) + Number(N2)) /2
+    {
+        nomeDoEstudante: 'João',
+        primeiraNota: 5,
+        segundaNota: 8,
+    },
 
-let result = Avarage > 6
+    {
+        nomeDoEstudante: 'Maria',
+        primeiraNota: 5,
+        segundaNota: 8,
+    }        
+]
 
-Avarage = Avarage.toFixed(2)
-
-if (result) {
-    alert("Parabéns," + student + "! Sua média foi de :" + Avarage)
+function calculaMedia(primeiraNota,segundaNota) {
+let media = (primeiraNota + segundaNota) / 2
+return media
 }
-else if (Avarage < 3) {
-    alert("Reprovado")
-}
-else {
-    alert(student + " Estude para a prova de recuperação! Sua média foi de: " + Avarage)
-}
+   
+
+for(let estudante of listaDeEstudantes){
+    mediaIndividual = calculaMedia(estudante.primeiraNota, estudante.segundaNota)
+    let aprovadoOuNao = mediaIndividual < 7 ? 'Infelizmente não foi dessa vez. Estude mais' : 'Parabéns pela sua aprovação'
+
+    alert(`A média de ${estudante.nomeDoEstudante} é ${mediaIndividual}.
+${aprovadoOuNao}`)
+}      
