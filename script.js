@@ -13,8 +13,8 @@ let listaDeEstudantes = [
 
     {
         nomeDoEstudante: 'Maria',
-        primeiraNota: 5,
-        segundaNota: 8,
+        primeiraNota: 3,
+        segundaNota: 9,
     }        
 ]
 
